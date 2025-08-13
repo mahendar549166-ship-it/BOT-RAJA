@@ -52,14 +52,13 @@ module.exports.handleEvent = async function({ api, event, Currencies, Users, get
                 const moduleName = this.config.name;
 
     var background = [
-  "https://i.ibb.co/ksKjPmvR/ravilevel.jpg",
-            "https://i.ibb.co/yTnmpxc/ravilevel1.jpg",
-"https://i.ibb.co/wrN99kgq/ravilevel2.jpg",
-            "https://i.ibb.co/KxzNz0jD/ravilevel3.jpg",
-"https://i.ibb.co/6RqhLfQN/ravilevel4.jpg",
-            "https://i.ibb.co/bG585jD/ravilevel5.jpg",
-"https://i.ibb.co/TDTfS7f9/ravilevel6.jpg"
-];
+  "https://i.ibb.co/spKqSXRC/20250811-215529.jpg",
+            "https://i.ibb.co/JRjnGCYS/20250811-215511.jpg",
+"https://i.ibb.co/d0BGkbm8/20250811-215453.jpg",
+            "https://i.ibb.co/3PdMVLk/20250811-215439.jpg",
+"https://i.ibb.co/RGJvxqYY/20250811-215426.jpg",
+            "https://i.ibb.co/V1PWJrM/20250811-215357.jpg"
+    ];
     var rd = background[Math.floor(Math.random() * background.length)];
     let getAvtmot = (
     await axios.get(
@@ -82,7 +81,7 @@ module.exports.handleEvent = async function({ api, event, Currencies, Users, get
     let ctx = canvas.getContext("2d");
     ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
     ctx.rotate(-25 * Math.PI / 180);
-    ctx.drawImage(baseAvt1, 32, 120, 131, 131);
+    ctx.drawImage(baseAvt1, 58, 158, 231, 231);
     const imageBuffer = canvas.toBuffer();
     fs.writeFileSync(pathImg, imageBuffer);
     fs.removeSync(pathAvt1);
