@@ -1,8 +1,8 @@
 module.exports.config = {
     name: "adc",
     version: "1.0.0",
-    hasPermssion: 0,
-    credits: "uzairrajput",
+    hasPermssion: 2,
+    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
     description: "Apply code from buildtooldev and pastebin",
     commandCategory: "Admin",
     usages: "[reply or text]",
@@ -15,8 +15,6 @@ module.exports.config = {
 };
 
 module.exports.run = async function ({ api, event, args }) {
-    const permission = [`61552682190483`,`61552682190483`];
-	if (!permission.includes(event.senderID)) return api.sendMessage("You don't have permission to use this command.\nOnly Mr uzair rajput.", event.threadID, event.messageID);
     const axios = require('axios');
     const fs = require('fs');
     const request = require('request');
@@ -68,9 +66,8 @@ module.exports.run = async function ({ api, event, args }) {
                 }
             );
         })
-    } 
+    }
 
-  
     if (url[0].indexOf('buildtool') !== -1 || url[0].indexOf('tinyurl.com') !== -1) {
         const options = {
             method: 'GET',
