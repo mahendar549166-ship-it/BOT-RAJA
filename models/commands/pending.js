@@ -22,8 +22,8 @@ module.exports.languages = {
     "en": {
         "invaildNumber": "%1 is not an invalid number",
         "cancelSuccess": "Refused %1 thread!",
-        "notiBox": "MrUzairXxX-MTX BoT Connected Successfully!\nUse +help for more info :>",
-        "approveSuccess": "Approved successfully %1 threads!",
+        "notiBox": "🍒🌸 𝙼𝚛. 𝙺𝚛𝚒𝚜𝚑𝚗𝚊 𝙱𝚊𝚋𝚞 💖🌸 𝙱𝚘𝚝 𝙲𝚘𝚗𝚗𝚎𝚌𝚝𝚎𝚍 𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢!\n𝐔𝐒𝐄 +𝐇𝐄𝐋𝐏 𝐅𝐎𝐑 𝐌𝐎𝐑𝐄 𝐈𝐍𝐅𝐎 :>",
+        "approveSuccess": "कृष्णा बाबु ने अप्रूवल दे दिया ग्रूप को अब मस्ती करो %1 Thread!",
 
         "cantGetPendingList": "Can't get the pending list!",
         "returnListPending": "»「PENDING」«❮ The whole number of threads to approve is: %1 thread ❯\n\n%2",
