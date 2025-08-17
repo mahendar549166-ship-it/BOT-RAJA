@@ -1,93 +1,32 @@
-/**
- * @author MintDaL
- * @warn Do not edit code or edit credits
- */
-
 module.exports.config = {
-  name: "info",
-  version: "1.2.6",
+  name: "inf",
+  version: "1.0.1", 
   hasPermssion: 0,
-  credits: "kensu",
-  description: "info bot owner",
-  commandCategory: "Dành cho người dùng",
-  hide:true,
-  usages: "",
-  cooldowns: 5,
-};
-
-
-module.exports.run = async function ({ api, event, args, Users, permssion, getText ,Threads}) {
-  const content = args.slice(1, args.length);
-  const { threadID, messageID, mentions } = event;
-  const { configPath } = global.client;
-  const { ADMINBOT } = global.config;
-   const { NDH } = global.config;
-  const { userName } = global.data;
-  const request = global.nodemodule["request"];
-  const fs = global.nodemodule["fs-extra"];
-  const { writeFileSync } = global.nodemodule["fs-extra"];
-  const mention = Object.keys(mentions);
-  delete require.cache[require.resolve(configPath)];
-  var config = require(configPath);
-  const listAdmin = ADMINBOT || config.ADMINBOT || [];
-  const listNDH = NDH || config.NDH ||  [];
+  credits:"ARIF BABU" ,
+  description: "THIS BOT IS MADE BY PRINCE MEGHWANSI",
+  usePrefix: true,
+  commandCategory: "INFORMATION",
+  cooldowns: 1,
+  dependencies: 
   {
-    const PREFIX = config.PREFIX;
-    const namebot = config.BOTNAME;
-    const { commands } = global.client;
-    const threadSetting = (await Threads.getData(String(event.threadID))).data || 
-    {};
-    const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX 
-    : global.config.PREFIX;
-    const dateNow = Date.now();
-    const time = process.uptime(),
-                      hours = Math.floor(time / (60 * 60)),
-                      minutes = Math.floor((time % (60 * 60)) / 60),
-                      seconds = Math.floor(time % 60);
-    const data = [
-      "Bạn không thể tìm được lệnh admin tại 'help' của MintBot",
-      "Đừng mong chờ gì từ MintBot.",
-      "Cái đoạn này á? Của SpermBot.",
-      "Nếu muốn không lỗi lệnh thì hãy xài những lệnh có trong help vì những lệnh lỗi đã bị ẩn rồi.",
-      "Đây là một con bot được các coder của MiraiProject nhúng tay vào.",
-      "Muốn biết sinh nhật của Mint thì hãy xài 'birthday'.",
-      "Cặc.",
-      "Cút.",
-      "Lồn.",
-      "Bạn chưa biết.",
-      "Bạn đã biết.",
-      "Bạn sẽ biết.",
-      "Không có gì là hoàn hảo, MintBot là ví dụ.",
-      "Mirai dropped.",
-      "MintBot là MiraiProject nhưng module là idea của SpermBot.",
-      "Bạn không biết cách sử dụng MintBot? Đừng dùng nữa.",
-      "Muốn chơi game? Qua bot khác mà chơi đây không rảnh",
-      "MintBot có thể hiểu phụ nữ nhưng không thể có được họ.",
-      "MintBot cân spam nhưng không có gì đáng để bạn spam."
-    ];
-    var link = [
-      "https://i.ibb.co/N2YsW5BM/IMG-20250531-095235.jpg",
-    ];
-
-    var i = 1;
-    var msg = [];
-    const moment = require("moment-timezone");
-    const date = moment.tz("Asia/Karachi").format("HH:MM:ss L");
-    for (const idAdmin of listAdmin) {
-      if (parseInt(idAdmin)) {
-        const name = await Users.getNameUser(idAdmin);
-        msg.push(`${i++} ${name} - ${idAdmin}`);
-      }
-    }
-    var msg1 = [];
-            for (const idNDH of listNDH) {
-                if (parseInt(idNDH)) {
-                  const name1 = (await Users.getData(idNDH)).name
-                    msg1.push(`${i++} ${name1} - ${idNDH} `);
-                }
-            }
-    var callback = () => 
-      api.sendMessage({ body: `◁➽▷ 𝐀𝐃𝐌𝐈𝐍 & 𝐁𝐎𝐓 ◁➽▷\n\n☞𝗕𝗼𝘁 𝗡𝗮𝗺𝗲☜☞${global.config.BOTNAME\n\n*╔══❖•ೋ° °ೋ•❖══╗\n*💋*★᭄𝗖𝗿𝗲𝗱𝗶𝘁𝘀  𝐀 𝐊 ⏤͟͟͞͞★\n*╚══❖•ೋ° °ೋ•❖══╝*\n\n➤𝗔𝗗𝗠𝗜𝗡 𝗬𝗢𝗨𝗧𝗨𝗕𝗘➤ \n\n\n🍂𝗣𝗘𝗥𝗙𝗜𝗫🍂 ═➤ 👉🏻${PREFIX}👈🏻\n\n➽ 𝗨𝗣𝗧𝗜𝗠𝗘 ➽\n\n➤ 𝗧𝗢𝗗𝗔𝗬 𝗜𝗦 ➽➤  ${juswa}\n\n𝘽𝙊𝙏 𝙄𝙎 𝙍𝙐𝙉𝙉𝙄𝙉𝙂⚡ \n🕛${hours}:${minutes}:${seconds}🕧\n\n✅Thanks for using Sony Bot🖤`, attachment: fs.createReadStream(__dirname + "/cache/kensu.jpg"), }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/kensu.jpg"));
-      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname + "/cache/kensu.jpg")).on("close", () => callback()); 
+    "request":"",
+    "fs-extra":"",
+    "axios":""
   }
 };
+module.exports.run = async function({ api,event,args,client,Users,Threads,__GLOBAL,Currencies }) {
+const axios = global.nodemodule["axios"];
+const request = global.nodemodule["request"];
+const fs = global.nodemodule["fs-extra"];
+const time = process.uptime(),
+    hours = Math.floor(time / (60 * 60)),
+    minutes = Math.floor((time % (60 * 60)) / 60),
+    seconds = Math.floor(time % 60);
+const moment = require("moment-timezone");
+var juswa = moment.tz("Asia/Kolkata").format("DD/MM/YYYY");
+var link =                                     
+["https://i.ibb.co/NNfZmPF/image.jpg","https://i.ibb.co/LzxXvnQ/image.jpg","https://i.ibb.co/MphKKHp/image.jpg"];
+var callback = () => api.sendMessage({body:`┏━━━━━┓\n     ✦❥⋆⃝𝐊𝐑𝐈𝐒𝐇𝐍𝐀 𝐁𝐀𝐁𝐔 ✦                    ✧═══•❁🙊❁•═══✧\n┗━━━━━┛\n\n\n         ❁ ═════════ ❃•❃ ═════════ ❁\n                            ♥️ 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 ♥️\n         ❁ ═════════ ❃•❃ ═════════ ❁\n\n\n\n🌺  [ 1 ]  𒁍 𝐁𝐎𝐓 𝐍𝐀𝐌𝐄   →   ${global.config.BOTNAME}\n🌺  [ 2 ]  𒁍 𝐁𝐎𝐓 𝐀𝐃𝐌𝐈𝐍   →   ✦❥⋆⃝𝐊𝐑𝐈𝐒𝐇𝐍𝐀 𝐁𝐀𝐁𝐔 ✦\n🌺  [ 3 ]  𒁍 𝐁𝐎𝐓 𝐏𝐑𝐄𝐅𝐈𝐗   →   [ ${global.config.PREFIX} ]\n🌺  [ 4 ]  𒁍  𝐃𝐀𝐓𝐄   → ${juswa}\n🌺  [ 5 ]  𒁍  𝐁𝐎𝐓 𝐑𝐔𝐍𝐈𝐍𝐆 𝐓𝐈𝐌𝐄  →  [ ${hours}:${minutes}:${seconds} ]\n🌺  [ 6 ]  𒁍  https://www.facebook.com/profile.php?id=61573328623221\n🌺  [ 7 ]  𒁍 WHATSAPP → [ +91 𝟖𝟎𝟗𝟒𝟖𝟐𝟖𝟐𝟑𝟕 ]\n🌺  [ 8 ]  𒁍 INSTAGRAM →  krishna_brand_legend\n🌺THANKYOU FOR USING ${global.config.BOTNAME} BOT♥️\n\n
+`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
+      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/juswa.jpg")).on("close",() => callback());
+   };
